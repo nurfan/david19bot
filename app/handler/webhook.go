@@ -26,6 +26,7 @@ func HandleTelegramWebHook(w http.ResponseWriter, r *http.Request) {
 
 	// Parse incoming request
 	var update, err = parseTelegramRequest(r)
+	log.Println("Incoming Message : ", update)
 	if err != nil {
 		log.Printf("error parsing update, %s", err.Error())
 		return
